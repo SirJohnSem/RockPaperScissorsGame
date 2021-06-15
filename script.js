@@ -4,17 +4,13 @@ function computerPlay(){
     return randomValues[Math.floor(Math.random()*randomValues.length)];
 }
 
-const computerSelection = computerPlay();
-const playerSelection = prompt('Enter ROCK/PAPER/SCISSOR', "").toUpperCase();
+/*variables for tracking computer&player scores*/
 let computerWins = 0;
 let playerWins = 0;
 let playDraws = 0;
-let gameRounds = 0;
 
-function game(){
- 
 /*single-round play function*/
-    function playRound(computerSelection,playerSelection){
+function playRound(computerSelection,playerSelection){
       if(
         (computerSelection==='ROCK'&& playerSelection==='SCISSOR')||
         (computerSelection==='SCISSOR'&& playerSelection==='PAPER')||
@@ -32,15 +28,28 @@ function game(){
       ){playDraws++; return "It's draw"}
       else {return "Check your choice please"};
    
-    }
- 
- return playRound(computerSelection,playerSelection);
 }
 
-console.log("Computer choice is " +computerSelection);    
-console.log("Your choice is " +playerSelection);
-console.log(game());
-console.log("Computer wins: "+computerWins, "Your wins: "+playerWins, "Draws: "+playDraws);
+/*multi-rounds play game and define of the winner*/
+const playGame=()=>{
+  for(let i=0;i<5;i++){
+    const computerSelection = computerPlay();
+    const playerSelection = prompt('Enter ROCK/PAPER/SCISSOR', "").toUpperCase();
+    let result = playRound(computerSelection,playerSelection);
+    console.log("Computer choice is " +computerSelection);
+    console.log("Your choice is " +playerSelection);
+    console.log(result);
+    console.log("Computer wins: "+computerWins, "Your wins: "+playerWins, "Draws: "+playDraws);
+  }
+  console.log((playerWins>computerWins)?"You won!":
+        (computerWins>playerWins)?"You lost:(":
+        "It's draw");
+}
+
+playGame();
+ 
+ 
+
 
 
 
