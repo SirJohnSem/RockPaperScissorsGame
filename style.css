@@ -1,0 +1,67 @@
+body{
+    background-color: black;
+    color:white;
+    text-align: center;
+    text-decoration-color: brown;
+} 
+
+.header{
+    height: 100px;
+    text-align: center;
+    margin-top: 0%;
+}
+button.weapon{
+    width: 200px;
+    height: 200px;
+    border-radius: 10%;
+    margin: 10px;
+}
+
+button.weapon:hover{
+    transform: scale(1.2);
+     
+}
+
+#game-buttons{
+    margin-top: 50px;
+}
+
+#ROCK{
+    background-image: url("rock.png");
+    background-size: 200px 200px;
+}
+
+#PAPER{
+    background-image: url("paper.png");
+    background-size: 200px 200px;
+}
+
+#SCISSOR{
+    background-image: url("scissors.png");
+    background-size: 200px 200px;
+}
+
+#tryagain{
+    text-align: center;
+    margin-top: 40px;
+}
+
+#scores{
+    height: 100px;
+    margin-top: 5%;
+    margin-left: 15%;
+    margin-right: 15%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    text-align: center;
+   }
+
+#player{
+    display: grid;
+
+}
+
+#computer{
+    display: grid;
+}
+
